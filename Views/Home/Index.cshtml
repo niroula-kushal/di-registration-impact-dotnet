@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<input type="number" id="request-count" value="20" />
+
+<a href="/api/items/seed" class="btn btn-success">
+    Run seeding
+</a>
+
+<button class="btn btn-primary" id="run-test">
+    Run Test
+</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("run-test").addEventListener("click", async function() {
+            const requestCount = parseInt(document.getElementById("request-count").value) || 20;
+            for(let i = 0; i < requestCount; i++) {
+                console.log('Requesting item', i + 1);
+                fetch('/api/items/get-one');
+            }
+        });
+    });
+</script>
