@@ -21,4 +21,12 @@ Impact of Singleton / Transient dependency in a medium to large application
 
 ## Result
 
+### AddScoped (100 parallel requests)
+<img width="1183" height="658" alt="image" src="https://github.com/user-attachments/assets/21990342-b894-4761-b705-ecc5955af589" />
+
+### AddTransient (10 parallel requests) -- other requests failed due to OOM
+
+<img width="1194" height="364" alt="image" src="https://github.com/user-attachments/assets/2e9f0bc3-542f-4c45-ae79-0e60cd78e6b1" />
+
+
 
